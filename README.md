@@ -8,7 +8,7 @@
   - International Security Protocols Workshop (SPW)（这个不是CCF A，是SP的Workshop）
 - USENIX Security Symposium (USS)
   - CSET @ USENIX Security Symposium (CEST)（非CCF A, USENIX Workshop）
-  - FOCI @ USENIX Security Symposium (FOCI)（非CCF A, USENIX Workshop）
+  - FOCI @ USENIX Security Symposium (FOCI)（非CCF A, USENIX Workshop）
   - SOUPS @ USENIX Security Symposium (SOUPS)（CCF C？, USENIX Workshop）
   - WOOT @ USENIX Security Symposium (WOOT)（非CCF A, USENIX Workshop）
 - IEEE Transactions on Dependable and Secure Computing (TDSC)
@@ -19,6 +19,8 @@
 
 
 使用Flask作为基础框架，写的比较简单，主要为实现功能，代码很丑（一下午撸完前后端，凑合看）
+
+有些功能应该放后端做比较好，当时写的时候脑子有点抽，后面有时间再慢慢改吧
 
 ## 安装方法
 
