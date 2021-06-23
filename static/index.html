@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paper Searcher</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./static/bootstrap-paginator.js"></script>
+    <style>
+        b {
+            color: red;
+        }
+		
+		.label_container span {
+			margin: 0 2px;
+		}
+		
+		.label_container {
+			margin: 2px;
+		}
+		
+		.mark_container {
+			line-height: 1.6em;
+		}
+		
+		.main-container {
+			position: relative;
+		}
+		
+		.seq-container {
+			position: absolute;
+			right: 10px;
+			top: 0px;
+			font-size: 32px;
+			font-weight: lighter;
+			color: #DDD;
+		}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="padding: 100px 100px 10px;">
+            <div style="margin: 30px auto; text-align: center;">
+                <img style="width:90px;vertical-align:middle;" src="./static/logo.png">
+                <h1 style="display: inline;vertical-align:middle;margin-left: 10px;">Paper Searcher</h1>
+            </div>
+            <div class="bs-example bs-example-form">
+                <div class="row">
+                    <div>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="keyword">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" id="search">Go!</button>
+                            </span>
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+            </div>
+        </div>
+        <div style="margin:30px 50px 10px; padding: 10px">
+            <div id="filter-container" style="margin: 10px; font-size: 16px; display:none" >
+                <p id="counter" style="display: inline-block;"></p>
+				<!--
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Source
+                        <span class="caret"></span>
+                    </button>
+                    <ul id="source-filter" class="dropdown-menu" role="menu">
+
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Year
+                        <span class="caret"></span>
+                    </button>
+                    <ul id="year-filter" class="dropdown-menu" role="menu">
+
+                    </ul>
+                </div>
+				-->
+            </div>
+            <div class="" id="main_panel">
+            </div>
+			
+			<div id="example" style="text-align: center; display:none;"> <ul id="pageLimit"></ul> </div>
+        </div>
+    </div>
+
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="modal—title"></h4>
+                </div>
+                <div id="abstract_text" class="modal-body">按下 ESC 按钮退出。</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    <script>
+        // 从输入框中提取关键词
+        var getKeywords = function(query){
+            var i = 0;
+            var finish_flag  =  false;
+            var tmp = "";
+            var keywords = [];
+
+            while(i<=query.length) {
+                if(i == query.length) finish_flag = true;
+                // 遇到逻辑符号停止
+                else if(query[i] == "+" || query[i] == "|") finish_flag = true
+                // 将下一个字符添加到tmp
+                else tmp += query[i];
+
+                if(finish_flag) {
+                    // 如果去空格之后不为空字符串，就添加到keyword列表
+                    tmp = tmp.trim()
+                    if(tmp) keywords.push(tmp);
+                    tmp = "";
+                    finish_flag = false;
+                }
+                i++;
+            }
+            return keywords;
+        }
+
+        var search = function(data) {
+            var query = $("#keyword").val();
+            $("#filter-container").show();
+
+            results = $.parseJSON(data);
+            var counter = results['count'];
+            // 显示当前查询数量
+            $("#counter").text(counter + " results found.");
+			$('#pageLimit').bootstrapPaginator({totalPages:Math.ceil(counter/10)});
+            // 清空页面
+            $("#main_panel").html("");
+
+            var datas = results['data'];
+            var source_list = {};
+            var year_list = {};
+
+            datas.forEach(function(item, index){
+                // 将搜索结果中关键字相关的部分标成高亮
+                var kw = getKeywords(query);
+                var title_content = item[4];
+                for(var key in kw) {
+                    var regS = new RegExp(kw[key], "ig");
+                    title_content = title_content.replace(regS, "<b>$&</b>")
+                }
+				
+				// 构建主体，使用panel元素
+				var npanel = $("<div class='panel panel-default main-container'></div>");
+				var panel_body = $("<div class='panel-body'></div>")
+				
+				// 构建序号容器
+				var seq_container = $("<div class='seq-container'></div>")
+				// 分页插件返回的是页码，index是当前页面的第几条，合一起就是总的条目数
+				seq_container.text("#" + (index + ($('#pageLimit').bootstrapPaginator("getPages")["current"] - 1) * 10 + 1));
+				
+				// 构建标题
+				var title = $("<h3></h3>");
+				title.html(title_content);
+				panel_body.append(title);
+				
+				// 构建底部标签容器
+				var label_container = $("<div class='label_container'></div>");
+				
+				// 构建mark标签容器
+				var mark_container = $("<span class='mark_container'></span>");
+				
+				// 构建来源标签
+				var source = $("<span></span>")
+				source.attr("class", "label label-primary source")
+				source.text(item[1]);
+				label_container.append(source);
+				
+				// 构建年份标签 
+				var year = $("<span></span>")
+				year.attr("class", "label label-success pub_year")
+				year.text(item[2]);
+				label_container.append(year);
+				
+				// 构建分类标签
+				var section = $("<span></span>")
+				section.attr("class", "label label-default sub_section")
+				section.text(item[3]);
+				label_container.append(section);
+				
+				// 构建链接标签 
+				var link = $("<a></a>")
+				link.attr("class", "btn btn-default btn-xs")
+				link.attr("target", "_blank");
+				link.html("<span class='glyphicon glyphicon-globe'></span> Web")
+				link.attr("href", item[5]);
+				label_container.append(link);
+				
+				// 构建摘要标签
+				var abstract_icon = $("<span></span>")
+				abstract_icon.attr("class", "view_abstract btn btn-default btn-xs")
+				abstract_icon.html("<span class='glyphicon glyphicon-eye-open'></span>Abstract");
+				abstract_icon.attr("article_id", item[0]);
+				label_container.append(abstract_icon);
+				
+				// 构建标记标签
+				var mark = $("<span></span>")
+				var mark_sub = $("<a></a>")
+				mark_sub.attr("class", "popover-test")
+				mark_sub.attr("class", "btn btn-xs mark-icon")
+				// mark_sub.attr("title", "Mark")
+				// mark_sub.attr("data-toggle", "popover")
+				// mark_sub.attr("data-placement", "bottom")
+				mark_sub.html("<span class='glyphicon glyphicon-star'></span>Mark")
+				var mark_content = $("<div class='col-6'><div class='input-group'><input type='text' class='form-control'><span class='input-group-btn'><button class='btn btn-default add-mark' type='button'>Add</button></span></div></div>")
+				mark_content.find("div").css("margin-bottom", "15px");
+				mark_content.find("button").attr("article_id", item[0]);
+				// 如果检测到有本地的标记，则进行添加
+				if(localStorage.hasOwnProperty(item[0])) {
+					mark_sub.addClass("btn-warning")
+					var mark_entry = JSON.parse(localStorage.getItem(item[0]));
+					for(var i = 0; i < mark_entry.length; i++) {
+						var entry = $("<div></div>");
+						entry.css("margin", "5px 0");
+						entry.text(mark_entry[i]);
+						entry.append($("<span class='glyphicon glyphicon-remove'></span>").attr({"article_id": item[0], "number": i}).css({"float": "right", "color": "red"}).addClass("remove-mark"))
+						mark_content.append(entry);
+						mark_container.append($("<span class='label label-info'></span>").text(mark_entry[i]))
+					}
+				} else {
+					mark_sub.addClass("btn-default")
+				}
+				// 设置popover组件
+				mark_sub.popover({placement: "bottom", html : true , content: mark_content[0].outerHTML});
+				mark.append(mark_sub);
+				
+				label_container.append(mark);
+				label_container.append(mark_container);
+				
+				panel_body.append(label_container);
+				npanel.append(seq_container);
+				npanel.append(panel_body);
+				
+				$("#main_panel").append(npanel);
+		
+                // 记录所有来源
+                if(source_list[item[1]] == undefined) source_list[item[1]] = 1;
+                else source_list[item[1]] += 1;
+
+                // 记录所有年份
+                if(year_list[item[2]] == undefined) year_list[item[2]] = 1;
+                else year_list[item[2]] += 1;
+            });
+
+            // 将筛选条件区域清空
+            $("#source-filter").html("");
+            $("#year-filter").html("");
+
+            // 绘制筛选条件
+            for(key in source_list) {
+                var source = '<li><a><div class="checkbox"><label><input checked ="checked" type="checkbox" name="'
+                var text = '">'
+                var tail = '</label></div></a></li>'
+                $("#source-filter").append(source + key + text + key + " (" + source_list[key] + ") " + tail);
+            }
+
+            for(key in year_list) {
+                var source = '<li><a><div class="checkbox"><label><input checked ="checked" type="checkbox" name="'
+                var text = '">'
+                var tail = '</label></div></a></li>'
+                $("#year-filter").prepend(source + key + text + key + " (" + year_list[key] + ") " + tail);
+            }
+			
+			// 全部处理完毕后，显示分页插件
+			$('#example').show();
+        }
+
+		// 处理点击Go按钮的事件
+        $(function(){
+            $('#search').on('click', function() {
+                var query = $("#keyword").val();
+                $.get("/search?q=" + encodeURIComponent(query), function(data, status) {
+                    search(data);
+                });
+				
+				$('#pageLimit').bootstrapPaginator({currentPage:1})
+            });
+        });
+		
+		// 处理点击abstract按钮的事件
+        $(document).on('click','.view_abstract', function() {
+            var query = $("#keyword").val();
+            var article_id = $(this).attr('article_id');
+            $.get("/abstract/" + article_id, function(data, status) {
+                var regS = new RegExp(query, "gi");
+                var content = $.parseJSON(data);
+                var title = content['data'][0][0];
+                var body = content['data'][0][1].replace('\n<','<').replace('>\n','>');
+
+                // 替换关键词为高亮
+                var kw = getKeywords(query);
+                for(var key in kw) {
+                    var regS = new RegExp(kw[key], "ig");
+                    body = body.replace(regS, "<b>$&</b>")
+                }
+
+                $("#modal—title").text(title);
+                $("#abstract_text").html(body.replace('\n','<br>'));
+                $('#myModal').modal('show');
+            });
+        });
+
+        // 绑定回车键搜索
+        $(document).keypress(function(e) {
+            if((e.keyCode || e.which)==13) {
+                // 触发需要调用的方法
+                $('#search').click();
+            }
+        });
+		
+		var getSources = function() {
+			var sources = [];
+			$("ul#source-filter :checkbox").each(function() {
+                if($(this).is(":checked")) sources.push($(this).attr('name'));
+            })
+			return "'"+sources.join("','") + "'" ;;
+		}
+		
+		var getYears = function () {
+			var years = [];
+			$("ul#year-filter :checkbox").each(function() {
+                if($(this).is(":checked")) years.push($(this).attr('name'));
+            })
+			return years.join(",");;
+		}
+
+        // 选中checkbox后的动作
+        $(document).on('change',':checkbox', function() {
+		
+            var source_str = getSources();
+            var year_str = getYears();
+
+            var query = $("#keyword").val();
+            $.get("/search?q=" + encodeURIComponent(query) + "&s=" + encodeURIComponent(source_str) + "&y=" + encodeURIComponent(year_str), function(data, status) {
+                    search(data);
+                });
+
+        });
+		
+		//  处理点击add按钮的事件
+		$(document).on('click', '.add-mark', function() {
+			var article_id = $(this).attr("article_id");
+			var user_mark = $(this).parent().prev();
+			var marks = [];
+			var num = 0;
+			// 查询localStorage，检查是否存在当前文章id的条目
+			if(localStorage.hasOwnProperty(article_id)) {
+				marks = JSON.parse(localStorage.getItem(article_id));
+				// num序号是从0开始的，长度表示新添加的元素的下标
+				num = marks.length;
+			} else {
+				// 如果没有历史记录，说明第一次添加，要把mark标记的样式变成warning
+				$(this).parent().parent().parent().parent().parent().parent().find('a').removeClass("btn-default").addClass("btn-warning");
+			}
+			//  向数组中插入用户数据并更新localStorage
+			marks.push(user_mark.val());
+			localStorage.setItem(article_id, JSON.stringify(marks));
+			// 处理popover中的显示
+			var entry = $("<div></div>");
+			entry.css("margin", "5px 0");
+			entry.text(user_mark.val());
+			// 增加删除按钮
+			entry.append($("<span class='glyphicon glyphicon-remove'></span>").attr({"article_id": article_id, "number": num}).css({"float": "right", "color": "red"}).addClass("remove-mark"));
+			// 向popover弹出的菜单中添加条目
+			$(this).parent().parent().parent().append(entry);
+			// 修改popover组件content的内容， 以免关了弹出框再打开看不到更新
+			var con = $(this).parent().parent().parent()[0].outerHTML;
+			$(this).parent().parent().parent().parent().parent().data('bs.popover').options.content = con;
+			// 在外层容器中同步添加label
+			$(this).parent().parent().parent().parent().parent().parent().parent().find('.mark_container').append($("<span class='label label-info'></span>").text(user_mark.val()))
+			// 全部完成后，清空输入框
+			user_mark.val("");
+		});
+		
+		// 处理点击删除按钮的事件
+		$(document).on('click', '.remove-mark', function() {
+			var article_id = $(this).attr("article_id");
+			var number = $(this).attr("number");
+			// 先取一下父容器，后面删除这个标签之后再取好像会出错
+			var parent_container =  $(this).parent().parent();
+			if(localStorage.hasOwnProperty(article_id)) {
+				// 判断下是否存在这个条目，以免误操作
+				marks = JSON.parse(localStorage.getItem(article_id));
+				// 在数组中删除指定下标（number）的元素，1表示删除1个
+				marks.splice(number, 1);
+				if(marks.length) {
+					// 如果删除完之后不为空，则将剩余数据填回去
+					localStorage.setItem(article_id, JSON.stringify(marks));
+				} else {
+					// 如果删除的是最后一个数据，将localStorage中的信息清空（否则因为是JSON字符串，会残留[]，影响判断）
+					localStorage.removeItem(article_id);
+					// 将mark标签重新置为初始状态
+					parent_container.parent().parent().parent().find('a').removeClass("btn-warning").addClass("btn-default");
+				}
+				
+				// 处理popover中的显示
+				// 先把当前元素后面的全部删了（因为删除当前元素后，后面元素的number值也有变化，所以还是重新填一遍比较好）
+				$(this).parent().prev().nextAll().remove();
+				// 重新填充后面的元素
+				for(var i = number; i < marks.length; i++) {
+					var entry = $("<div></div>");
+					entry.css("margin", "5px 0");
+					entry.text(marks[i]);
+					entry.append($("<span class='glyphicon glyphicon-remove'></span>").attr({"article_id": article_id, "number": i}).css({"float": "right", "color": "red"}).addClass("remove-mark"));
+					parent_container.append(entry);
+				}
+				// 修改popover组件content的内容， 以免关了弹出框再打开看不到更新
+				var con = parent_container[0].outerHTML;
+				parent_container.parent().parent().data('bs.popover').options.content = con;
+				// 处理标签的部分（因为是单纯的显示，直接用nth-child选择器找到对应元素删了就行）
+				parent_container.parent().parent().parent().parent().find('.mark_container span:nth-child('+(parseInt(number)+1)+')').remove();
+			}
+		});
+		
+		$('#pageLimit').bootstrapPaginator({
+            currentPage: 1,//当前页。
+            totalPages: 1,//总页数。
+            size:"normal",//应该是页眉的大小。
+            bootstrapMajorVersion: 3,//bootstrap的版本要求。
+            alignment:"right",
+            numberOfPages:10,//显示的页数
+            itemTexts: function (type, page, current) {//如下的代码是将页眉显示的中文显示我们自定义的中文。
+                    switch (type) {
+                    case "first": return "首页";
+                    case "prev": return "上一页";
+                    case "next": return "下一页";
+                    case "last": return "末页";
+                    case "page": return page;
+                   }
+               },
+             onPageClicked: function (event, originalEvent, type, page) {//给每个页眉绑定一个事件，其实就是ajax请求，其中page变量为当前点击的页上的数字。
+                        $.get("/search?q=" + encodeURIComponent($("#keyword").val()) + "&p=" + page, function(data, status) {
+							search(data);
+						});
+						$('html,body').animate({ scrollTop: 330 }, 500);
+                   }
+            });
+    </script>
+</body>
+</html>
