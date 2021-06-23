@@ -1,3 +1,5 @@
+import sys
+
 from flask import Flask, request, jsonify
 import sqlite3
 import json
@@ -147,4 +149,4 @@ def get_abs(q):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host=sys.argv[1], port=sys.argv[2], debug=True)
