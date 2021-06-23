@@ -26,7 +26,7 @@ def keywords(q, source, year, page):
 
     keywords = []
     operator = []
-    
+
     source = sqlinjection(source)
     year = sqlinjection(year)
 
@@ -59,19 +59,19 @@ def keywords(q, source, year, page):
     base_abstract = "ABSTRACT LIKE '%{0}%'"
     for i in range(len(operator)):
         try:
-            clause += base_title.format(keywords[i],)
-            clause += " {0} ".format(operator[i],)
+            clause += base_title.format(keywords[i], )
+            clause += " {0} ".format(operator[i], )
         except IndexError as e:
             print(e)
             return "SELECT * FROM PAPER WHERE YEAR=1900"
-    clause += base_title.format(keywords[-1],)
+    clause += base_title.format(keywords[-1], )
 
     clause += " OR "
 
     for i in range(len(operator)):
-        clause += base_abstract.format(keywords[i],)
-        clause += " {0} ".format(operator[i],)
-    clause += base_abstract.format(keywords[-1],) + ")"
+        clause += base_abstract.format(keywords[i], )
+        clause += " {0} ".format(operator[i], )
+    clause += base_abstract.format(keywords[-1], ) + ")"
 
     if source is not None:
         clause += (" AND CONFERENCE IN (" + source + ") ")
@@ -80,6 +80,7 @@ def keywords(q, source, year, page):
 
     print(clause)
     return base_query + clause
+
 
 @app.route('/')
 def home():
@@ -96,7 +97,7 @@ def get_info():
     c = conn.cursor()
     query = keywords(q, source, year, page)
     results = []
-    
+
     # get total count
     try:
         base_q = "SELECT COUNT(*) FROM PAPER WHERE"
@@ -104,10 +105,10 @@ def get_info():
         total = cursor.fetchone()[0]
     except sqlite3.Error as e:
         total = -1
-    
+
     # get real data
     try:
-        query = "SELECT * FROM PAPER WHERE" +  query
+        query = "SELECT * FROM PAPER WHERE" + query
         query += " ORDER BY YEAR DESC "
         try:
             page = int(page) - 1
@@ -149,4 +150,10 @@ def get_abs(q):
 
 
 if __name__ == '__main__':
-    app.run(host=sys.argv[1], port=sys.argv[2], debug=True)
+    try:
+        host = sys.argv[1]
+        port = sys.argv[2]
+    except:
+        host = '127.0.0.1'
+        port = 5000
+    app.run(host=host, port=port, debug=True)
