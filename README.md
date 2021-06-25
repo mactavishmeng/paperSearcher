@@ -15,7 +15,7 @@
 - IEEE Transactions on Information Forensics and Security (TIFS)
 - Network and Distributed System Security Symposium (NDSS) （CCF B，但是质量比较高，也收录了）
 - Annual Computer Security Applications Conference (ACSAC)（CCF B，但是质量比较高，也收录了）
-
+- ACM Computing Surveys (CSUR)（CCF None，但是质量比较高，也收录了）
 
 
 使用Flask作为基础框架，写的比较简单，主要为实现功能，代码很丑（一下午撸完前后端，凑合看）
@@ -51,5 +51,10 @@ if __name__ == '__main__':
 - 关键字为`blockchain+security`，查询结果则在 title 和 abstract 中搜索同时包含`blockchain`和`security`的文章。
 - 关键字为`security | internet of things | evaluation`，表示只要任意出现 `security`, `internet of things`, `evaluation`这三个关键词的任意一个，就会返回该条记录。
 
+## 更新记录
 
+2021.06.25
 
+- 更新数据库：新增 ACM Computing Surveys Volume 54, Number 3, June 2021（共23篇）；
+- 更新数据库：新增"BIB"列，用于存储`.bib`格式的引用文件；
+- 更新UI界面，新增"Cite"按钮，用于下载`.bib`格式的引用文件；
