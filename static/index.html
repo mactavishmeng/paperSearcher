@@ -12,7 +12,7 @@
             color: red;
         }
 		
-		.label_container span {
+		.label_container span,a {
 			margin: 0 2px;
 		}
 		
@@ -200,6 +200,14 @@
 				link.attr("target", "_blank");
 				link.html("<span class='glyphicon glyphicon-globe'></span> Web")
 				link.attr("href", item[5]);
+				label_container.append(link);
+
+				// 构建引用标签 
+				var link = $("<a></a>")
+				link.attr("class", "btn btn-default btn-xs")
+				link.attr("target", "_blank");
+				link.html("<span class='glyphicon glyphicon-edit'></span> Cite")
+				link.attr("href", item[7]);
 				label_container.append(link);
 				
 				// 构建摘要标签
