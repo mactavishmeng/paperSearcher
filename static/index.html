@@ -177,9 +177,25 @@
 				var mark_container = $("<span class='mark_container'></span>");
 				
 				// 构建来源标签
-				var source = $("<span></span>")
+				var source = $("<a></a>")
 				source.attr("class", "label label-primary source")
 				source.text(item[1]);
+                var source_poll = {
+                    "ccs": "Computer and Communications Security (CCF A)",
+                    "sp": "IEEE Symposium on Security and Privacy (CCF A)",
+                    "spw": "International Security Protocols Workshop (CCF None)",
+                    "uss": "USENIX Security Symposium (CCF A)",
+                    "cest": "CSET @ USENIX Security Symposium (CCF None)",
+                    "foci": "FOCI @ USENIX Security Symposium (CCF None)",
+                    "soups": "SOUPS @ USENIX Security Symposium (CCF C)",
+                    "woot": "WOOT @ USENIX Security Symposium (CCF None)",
+                    "tdsc": "IEEE Transactions on Dependable and Secure Computing (CCF A)",
+                    "tifs": "IEEE Transactions on Information Forensics and Security (CCF A)",
+                    "ndss": "Network and Distributed System Security Symposium (CCF B)",
+                    "acsac": "Annual Computer Security Applications Conference (CCF B)",
+                    "csur": "ACM Computing Surveys (CCF None)"
+                }
+                source.popover({"trigger": "hover", "placement": "bottom", "content": source_poll[item[1]]});
 				label_container.append(source);
 				
 				// 构建年份标签 
