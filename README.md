@@ -59,3 +59,9 @@ if __name__ == '__main__':
 - 更新数据库：新增"BIB"列，用于存储`.bib`格式的引用文件；
 - 更新UI界面，新增"Cite"按钮，用于下载`.bib`格式的引用文件；
 - 更新UI界面，新增来源缩写的全名显示，将鼠标悬停在缩写标签上即可。
+
+2021.09.06
+
+- 更新数据库：新增 IEEE Communications Surveys and Tutorials, 2016 ~ 2021（共636篇）
+- 更新数据库：新增 USENIX Security Symposium'21（共247篇）
+- 更新UI界面：新增会议标签`comsur`（IEEE Communications Surveys and Tutorials）
