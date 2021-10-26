@@ -8,7 +8,7 @@
   - International Security Protocols Workshop (SPW)（这个不是CCF A，是SP的Workshop）
 - USENIX Security Symposium (USS)
   - CSET @ USENIX Security Symposium (CEST)（非CCF A, USENIX Workshop）
-  - FOCI @ USENIX Security Symposium (FOCI)（非CCF A, USENIX Workshop）
+  - FOCI @ USENIX Security Symposium (FOCI)（非CCF A, USENIX Workshop）
   - SOUPS @ USENIX Security Symposium (SOUPS)（CCF C？, USENIX Workshop）
   - WOOT @ USENIX Security Symposium (WOOT)（非CCF A, USENIX Workshop）
 - IEEE Transactions on Dependable and Secure Computing (TDSC)
@@ -65,3 +65,10 @@ if __name__ == '__main__':
 - 更新数据库：新增 IEEE Communications Surveys and Tutorials, 2016 ~ 2021（共636篇）
 - 更新数据库：新增 USENIX Security Symposium'21（共247篇）
 - 更新UI界面：新增会议标签`comsur`（IEEE Communications Surveys and Tutorials）
+
+2021.10.26
+- 更新数据库：新增 IEEE Symposium on Security and Privacy, 2021（共115篇）
+- 更新数据库：新增 IEEE Transactions on Dependable and Secure Computing, 2021, July ~ October（共70篇）
+- 更新数据库：新增 ACM Computing Surveys, 2021, July ~ September（共87篇）
+- 更新数据库：新增 IEEE Transactions on Information Forensics and Security, 2021（共92篇）
+
