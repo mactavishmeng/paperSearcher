@@ -314,7 +314,7 @@
         $(function(){
             $('#search').on('click', function() {
                 var query = $("#keyword").val();
-                $.get("/search?q=" + encodeURIComponent(query), function(data, status) {
+                $.get("./search?q=" + encodeURIComponent(query), function(data, status) {
                     search(data);
                 });
 				
@@ -326,7 +326,7 @@
         $(document).on('click','.view_abstract', function() {
             var query = $("#keyword").val();
             var article_id = $(this).attr('article_id');
-            $.get("/abstract/" + article_id, function(data, status) {
+            $.get("./abstract/" + article_id, function(data, status) {
                 var regS = new RegExp(query, "gi");
                 var content = $.parseJSON(data);
                 var title = content['data'][0][0];
@@ -376,7 +376,7 @@
             var year_str = getYears();
 
             var query = $("#keyword").val();
-            $.get("/search?q=" + encodeURIComponent(query) + "&s=" + encodeURIComponent(source_str) + "&y=" + encodeURIComponent(year_str), function(data, status) {
+            $.get("./search?q=" + encodeURIComponent(query) + "&s=" + encodeURIComponent(source_str) + "&y=" + encodeURIComponent(year_str), function(data, status) {
                     search(data);
                 });
 
@@ -474,7 +474,7 @@
                    }
                },
              onPageClicked: function (event, originalEvent, type, page) {//给每个页眉绑定一个事件，其实就是ajax请求，其中page变量为当前点击的页上的数字。
-                        $.get("/search?q=" + encodeURIComponent($("#keyword").val()) + "&p=" + page, function(data, status) {
+                        $.get("./search?q=" + encodeURIComponent($("#keyword").val()) + "&p=" + page, function(data, status) {
 							search(data);
 						});
 						$('html,body').animate({ scrollTop: 330 }, 500);

@@ -93,7 +93,7 @@ def get_info():
     source = request.args.get("s")
     year = request.args.get("y")
     page = request.args.get("p")
-    conn = sqlite3.connect("./paper.db")
+    conn = sqlite3.connect(sys.path[0] + "/paper.db")
     c = conn.cursor()
     query = keywords(q, source, year, page)
     results = []
@@ -130,7 +130,7 @@ def get_info():
 
 @app.route('/abstract/<q>')
 def get_abs(q):
-    conn = sqlite3.connect("./paper.db")
+    conn = sqlite3.connect(sys.path[0] + "/paper.db")
     c = conn.cursor()
     query = "SELECT title,abstract FROM PAPER WHERE id=" + str(int(q))
     results = []
