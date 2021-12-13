@@ -72,3 +72,12 @@ if __name__ == '__main__':
 - 更新数据库：新增 ACM Computing Surveys, 2021, July ~ September（共87篇）
 - 更新数据库：新增 IEEE Transactions on Information Forensics and Security, 2021（共92篇）
 
+2021.12.13
+- 更新数据库：新增 Annual Computer Security Applications Conference, 2021（共81篇）
+- 更新数据库：新增 Computer and Communications Security, 2021（共226篇）
+- 更新数据库：新增 CSET @ USENIX Security Symposium, 2021（共13篇）
+- 更新数据库：新增 IEEE Transactions on Dependable and Secure Computing, 2021, November（共33篇）
+- 更新数据库：新增 ACM Computing Surveys, 2021, November ~ December（共43篇）
+- 更新数据库：新增 IEEE Communications Surveys and Tutorials, 2021, Fourthquarter（共24篇）
+- 更新数据库：新增 IEEE Transactions on Information Forensics and Security, 2021（共46篇）
+
