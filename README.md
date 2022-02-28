@@ -81,3 +81,6 @@ if __name__ == '__main__':
 - 更新数据库：新增 IEEE Communications Surveys and Tutorials, 2021, Fourthquarter（共24篇）
 - 更新数据库：新增 IEEE Transactions on Information Forensics and Security, 2021（共46篇）
 
+2022.02.28
+- 更新数据库：新增 IEEE Transactions on Dependable and Secure Computing, 2022, January~February（共49篇）
+- 更新数据库：新增 IEEE Transactions on Information Forensics and Security, Volume 17, 2022（共46篇）
