@@ -16,10 +16,10 @@ const source_pool = {
     "comsur": "IEEE Communications Surveys and Tutorials (CCF None)",
     "esorics": "European Symposium on Research in Computer Security (CCF B)",
     "csfw": "IEEE Computer Security Foundations Symposium (CCF B)",
-    "dsn": "Dependable Systems and Networks",
+    "dsn": "Dependable Systems and Networks (CCF B)",
     "compsec": "Computers & Security (CCF B)",
     "raid": "International Symposium on Recent Advances in Intrusion Detection (CCF B)",
-    "jcs": "Journal of Computer Security",
+    "jcs": "Journal of Computer Security (CCF B)",
     "tissec": "ACM Transactions on Privacy and Security (CCF B)",
     "srds": "IEEE International Symposium on Reliable Distributed Systems (CCF B)"
 };
