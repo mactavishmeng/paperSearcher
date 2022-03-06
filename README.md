@@ -1,7 +1,7 @@
 # paperSearcher
 一个搜索网络安全领域顶会论文的小工具
 ![img.png](img.png)
-使用python3编写，数据库内容将不定期更新，目前收录了2016~2020，以及部分2021的文章，包含：
+使用python3编写，数据库内容将不定期更新，目前收录了2016~2021，以及部分2022的文章，包含：
 
 - Computer and Communications Security (CCS)
 - IEEE Symposium on Security and Privacy (S&P)
@@ -16,6 +16,14 @@
 - Network and Distributed System Security Symposium (NDSS) （CCF B，但是质量比较高，也收录了）
 - Annual Computer Security Applications Conference (ACSAC)（CCF B，但是质量比较高，也收录了）
 - ACM Computing Surveys (CSUR)（CCF None，但是质量比较高，也收录了）
+- European Symposium on Research in Computer Security (ESORICS) (CCF B)
+- IEEE Computer Security Foundations Symposium (CSFW) (CCF B)
+- Dependable Systems and Networks (DSN) (CCF B)
+- Computers & Security (COMPSEC) (CCF B)
+- International Symposium on Recent Advances in Intrusion Detection (RAID) (CCF B)
+- Journal of Computer Security (JCS) (CCF B)
+- ACM Transactions on Privacy and Security (CCF 列表显示为 TOPS， DBLP显示为 TISSEC) (CCF B)
+- IEEE International Symposium on Reliable Distributed Systems (SRDS) (CCF B)
 
 
 使用Flask作为基础框架，写的比较简单，主要为实现功能，代码很丑（一下午撸完前后端，凑合看）
@@ -39,7 +47,7 @@ python3 website.py
 
 ```python
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80, debug=True)
+    app.run(host='0.0.0.0', port=80, debug=False)
 ```
 
 建议仅在本地使用，不要开在0.0.0.0（因为查询接口可能有SQL注入，写的匆忙……没有做太多防护）
@@ -84,3 +92,16 @@ if __name__ == '__main__':
 2022.02.28
 - 更新数据库：新增 IEEE Transactions on Dependable and Secure Computing, 2022, January~February（共49篇）
 - 更新数据库：新增 IEEE Transactions on Information Forensics and Security, Volume 17, 2022（共46篇）
+
+2022.03.06
+- 更新UI界面：使用 Bootstrap Table 组件重构前端，代码简洁高效
+- 更新资源文件：将所需静态资源放在本地，方便无Internet以及本地运行，避免网络波动引起的载入缓慢、显示不正确等问题
+- 更新UI界面：新增标签 `esorics`, `csfw`, `dsn`, `compsec`, `raid`, `jcs`, `tissec`, `srds`
+- 更新数据库：新增 European Symposium on Research in Computer Security, 2016 ~ 2022 （共356篇）
+- 更新数据库：新增 IEEE Computer Security Foundations Symposium, 2016 ~ 2022 （共162篇）
+- 更新数据库：新增 Dependable Systems and Networks, 2016 ~ 2022 （共649篇）
+- 更新数据库：新增 Computers & Security, 2016 ~ 2022 （共1368篇）
+- 更新数据库：新增 International Symposium on Recent Advances in Intrusion Detection, 2016 ~ 2022 （共174篇）
+- 更新数据库：新增 Journal of Computer Security, 2016 ~ 2022 （共136篇）
+- 更新数据库：新增 ACM Transactions on Privacy and Security, 2016 ~ 2022 （共128篇）
+- 更新数据库：新增 IEEE International Symposium on Reliable Distributed Systems, 2016 ~ 2022 （共222篇）
