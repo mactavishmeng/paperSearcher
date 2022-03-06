@@ -17,7 +17,11 @@ const source_pool = {
     "esorics": "European Symposium on Research in Computer Security (CCF B)",
     "csfw": "IEEE Computer Security Foundations Symposium (CCF B)",
     "dsn": "Dependable Systems and Networks",
-    "compsec": "Computers & Security (CCF B)"
+    "compsec": "Computers & Security (CCF B)",
+    "raid": "International Symposium on Recent Advances in Intrusion Detection (CCF B)",
+    "jcs": "Journal of Computer Security",
+    "tissec": "ACM Transactions on Privacy and Security (CCF B)",
+    "srds": "IEEE International Symposium on Reliable Distributed Systems (CCF B)"
 };
 
 // 给关键字上色
