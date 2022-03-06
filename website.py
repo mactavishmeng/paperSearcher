@@ -92,10 +92,11 @@ def get_info():
     q = request.args.get("q")
     source = request.args.get("s")
     year = request.args.get("y")
-    page = request.args.get("p")
+    offset = int(request.args.get("offset"))
+    limit = int(request.args.get("limit"))
     conn = sqlite3.connect(sys.path[0] + "/paper.db")
     c = conn.cursor()
-    query = keywords(q, source, year, page)
+    query = keywords(q, source, year, offset)
     results = []
 
     # get total count
@@ -110,15 +111,12 @@ def get_info():
     try:
         query = "SELECT * FROM PAPER WHERE" + query
         query += " ORDER BY YEAR DESC "
-        try:
-            page = int(page) - 1
-        except:
-            page = 0
-        query += "LIMIT 10 OFFSET {0}".format(page * 10)
+        query += "LIMIT {1} OFFSET {0}".format(offset, limit)
         cursor = c.execute(query)
+        key_list = ["id", "conf", "year", "cat", "title", "href", "abstract", "bib"]
         for item in cursor:
-            results.append(item)
-        msg = {"code": 0, "msg": "success", "data": results, "count": total}
+            results.append(dict(zip(key_list, item)))
+        msg = {"code": 0, "msg": "success", "rows": results, "total": total}
     except sqlite3.OperationalError as e:
         msg = {"code": 1, "msg": e, "data": query}
     except sqlite3.IntegrityError as e:
