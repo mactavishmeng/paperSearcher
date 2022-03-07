@@ -69,6 +69,11 @@ $(function (){
             // 设置加载完成的绑定事件，否则tooltip不工作
             onLoadSuccess: function (data) {
                 $('[data-toggle="tooltip"]').tooltip()
+                // 刷新 mathjax 状态
+                MathJax.startup.defaultReady();
+                MathJax.startup.promise.then(() => {
+                    console.log('MathJax initial typesetting complete');
+                });
                 // 滚动到新页面的第一行
                 $('html,body').animate({ scrollTop: $("#title-area").height() }, 500);
             }
@@ -137,6 +142,12 @@ window.operateEvents = {
             $("#modal—title").html(title);
             $("#abstract_text").html(body.replace('\n', '<br>'));
             $('#myModal').modal('show');
+
+            // 刷新 mathjax 状态
+            MathJax.startup.defaultReady();
+            MathJax.startup.promise.then(() => {
+                console.log('MathJax initial typesetting complete');
+            });
         });
     },
 }
