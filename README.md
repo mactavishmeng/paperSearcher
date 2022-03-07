@@ -105,3 +105,6 @@ if __name__ == '__main__':
 - 更新数据库：新增 Journal of Computer Security, 2016 ~ 2022 （共136篇）
 - 更新数据库：新增 ACM Transactions on Privacy and Security, 2016 ~ 2022 （共128篇）
 - 更新数据库：新增 IEEE International Symposium on Reliable Distributed Systems, 2016 ~ 2022 （共222篇）
+
+2022.03.07
+- 更新UI界面：引入 Mathjax.js，支持 Abstract 内容中包含公式部分的解析。
