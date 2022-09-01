@@ -24,6 +24,7 @@
 - Journal of Computer Security (JCS) (CCF B)
 - ACM Transactions on Privacy and Security (CCF 列表显示为 TOPS， DBLP显示为 TISSEC) (CCF B)
 - IEEE International Symposium on Reliable Distributed Systems (SRDS) (CCF B)
+- IEEE Communications Surveys and Tutorials (COMSUR) (CCF None, 但是质量比较高，也收录了)
 
 
 使用Flask作为基础框架，写的比较简单，主要为实现功能，代码很丑（一下午撸完前后端，凑合看）
@@ -108,3 +109,17 @@ if __name__ == '__main__':
 
 2022.03.07
 - 更新UI界面：引入 Mathjax.js，支持 Abstract 内容中包含公式部分的解析。
+
+2022.09.01
+- 更新数据库：新增 CSET @ USENIX Security Symposium 2022 （共19篇）
+- 更新数据库：新增 IEEE Symposium on Security and Privacy (S&P) 2022（共148篇）
+- 更新数据库：新增 USENIX Security Symposium 2022 (Summer/Fall/Winter Accepted Papers)（共256篇）
+- 更新数据库：新增 IEEE Communications Surveys and Tutorials Volume 24 (2022), Number 1~3（共56篇）
+- 更新数据库：新增 ACM Computing Surveys (CSUR) Volume 55 (2022), Number 2（共21篇）
+- 更新数据库：新增 Dependable Systems and Networks (DSN) 2022（共50篇）
+- 更新数据库：新增 IEEE Transactions on Dependable and Secure Computing (TDSC) Volume 19 (2022), Number 2~4（共145篇）
+- 更新数据库：新增 IEEE Transactions on Information Forensics and Security (TIFS) Volume 17 (2022)（共136篇）
+- 更新数据库：新增 Computers & Security (COMPSEC) Volume 115~120 (2022)（共162篇）
+- 更新数据库：新增 Journal of Computer Security (JCS) Volume 30 (2022), Number 2~3（共11篇）
+- 更新数据库：新增 ACM Transactions on Privacy and Security (TISSEC/TOPS) Volume 25 (2022), Number 2~4（共27篇）
+
