@@ -123,3 +123,15 @@ if __name__ == '__main__':
 - 更新数据库：新增 Journal of Computer Security (JCS) Volume 30 (2022), Number 2~3（共11篇）
 - 更新数据库：新增 ACM Transactions on Privacy and Security (TISSEC/TOPS) Volume 25 (2022), Number 2~4（共27篇）
 
+2022.12.13
+- 更新数据库：新增 Annual Computer Security Applications Conference (ACSAC) 2022 (共73篇)
+- 更新数据库：新增 Computer and Communications Security (CCS) 2022 (共286篇)
+- 更新数据库：新增 IEEE Computer Security Foundations Symposium (CSFW) 2022 (共31篇)
+- 更新数据库：新增 International Symposium on Recent Advances in Intrusion Detection (RAID) 2022 (共35篇)
+- 更新数据库：新增 SOUPS @ USENIX Security Symposium (SOUPS) 2022 (共37篇)
+- 更新数据库：新增 European Symposium on Research in Computer Security (ESORICS) 2022 (共110篇)
+- 更新数据库：新增 Computers & Security (COMPSEC) Volume 121 ~ 123 (2022) (共85篇)
+- 更新数据库：新增 IEEE Communications Surveys and Tutorials (COMSUR) Volume 24 (Fourthquarter 2022) (共20篇)
+- 更新数据库：新增 ACM Computing Surveys (CSUR) Volume 55 (Number 1, Number 3) (共43篇)
+- 更新数据库：新增 Journal of Computer Security (JCS) Volume 30 (2022), Number 4（共8篇）
+- 更新数据库：新增 IEEE Transactions on Dependable and Secure Computing (TDSC) Volume 19 (2022), Number 5~6（共86篇）
