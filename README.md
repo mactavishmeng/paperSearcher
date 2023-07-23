@@ -164,11 +164,11 @@ if __name__ == '__main__':
 
 2023.07.23
 
-* 更新数据库：新增 IEEE Journal of Selected Areas in Communications (JSAC) 2016~2023 （共1805篇)
-* 更新数据库：新增 IEEE Transactions on Mobile Computing (TMC) 2016~2023 （共1995篇)
-* 更新数据库：新增 IEEE/ACM Transactions on Networking (TON) 2016~2023 （共1641篇)
-* 更新数据库：新增 IEEE Journal of Selected Areas in Communications (JSAC) 2016~2023 （共1805篇)
-* 更新数据库：新增 ACM Conference on Applications, Technologies, Architectures, and Protocols for Computer Communication (SIGCOMM) 2016~2023 （共346篇)
-* 更新数据库：新增 ACM/IEEE International Conference on Mobile Computing and Networking (MobiCom) 2016~2023 （共721篇)
-* 更新数据库：新增 Symposium on Networked Systems Design and Implementation (NSDI) 2016~2023 （共474篇)
-* 更新UI界面：新增标签 `jsac`, `tmc`, `ton`, `sigcomm`, `mobicom`, `infocom`, `nsdi`
+- 更新数据库：新增 IEEE Journal of Selected Areas in Communications (JSAC) 2016~2023 （共1805篇)
+- 更新数据库：新增 IEEE Transactions on Mobile Computing (TMC) 2016~2023 （共1995篇)
+- 更新数据库：新增 IEEE/ACM Transactions on Networking (TON) 2016~2023 （共1641篇)
+- 更新数据库：新增 IEEE Conference on Computer Communications (INFOCOM) 2016~2023 （共3420篇, 含WORKSHOP)
+- 更新数据库：新增 ACM Conference on Applications, Technologies, Architectures, and Protocols for Computer Communication (SIGCOMM) 2016~2023 （共346篇)
+- 更新数据库：新增 ACM/IEEE International Conference on Mobile Computing and Networking (MobiCom) 2016~2023 （共721篇)
+- 更新数据库：新增 Symposium on Networked Systems Design and Implementation (NSDI) 2016~2023 （共474篇)
+- 更新UI界面：新增标签 `jsac`, `tmc`, `ton`, `sigcomm`, `mobicom`, `infocom`, `nsdi`
