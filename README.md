@@ -26,6 +26,13 @@
 - ACM Transactions on Privacy and Security (CCF 列表显示为 TOPS， DBLP显示为 TISSEC) (CCF B)
 - IEEE International Symposium on Reliable Distributed Systems (SRDS) (CCF B)
 - IEEE Communications Surveys and Tutorials (COMSUR) (CCF None, 但是质量比较高，也收录了)
+- IEEE Journal of Selected Areas in Communications (JSAC) (CCF A)
+- IEEE Transactions on Mobile Computing (TMC) (CCF A)
+- IEEE/ACM Transactions on Networking (TON) (CCF A)
+- ACM Conference on Applications, Technologies, Architectures, and Protocols for Computer Communication (SIGCOMM) (CCF A)
+- ACM/IEEE International Conference on Mobile Computing and Networking (MobiCom) (CCF A)
+- IEEE Conference on Computer Communications (INFOCOM) (CCF A)
+- Symposium on Networked Systems Design and Implementation (NSDI) (CCF A)
 
 使用Flask作为基础框架，写的比较简单，主要为实现功能，代码很丑（一下午撸完前后端，凑合看）
 
@@ -154,3 +161,14 @@ if __name__ == '__main__':
 - 更新数据库：新增 IEEE Transactions on Dependable and Secure Computing (TDSC) Volume 20 Number 1~3 (2023)（共178篇）
 - 更新数据库：新增 IEEE Transactions on Information Forensics and Security (TIFS) Volume 18 (2023)（共285篇）
 - 更新数据库：新增 ACM Transactions on Privacy and Security (TISSEC/TOPS) Volume 26 Number 1~2 (2023)（共21篇）
+
+2023.07.23
+
+* 更新数据库：新增 IEEE Journal of Selected Areas in Communications (JSAC) 2016~2023 （共1805篇)
+* 更新数据库：新增 IEEE Transactions on Mobile Computing (TMC) 2016~2023 （共1995篇)
+* 更新数据库：新增 IEEE/ACM Transactions on Networking (TON) 2016~2023 （共1641篇)
+* 更新数据库：新增 IEEE Journal of Selected Areas in Communications (JSAC) 2016~2023 （共1805篇)
+* 更新数据库：新增 ACM Conference on Applications, Technologies, Architectures, and Protocols for Computer Communication (SIGCOMM) 2016~2023 （共346篇)
+* 更新数据库：新增 ACM/IEEE International Conference on Mobile Computing and Networking (MobiCom) 2016~2023 （共721篇)
+* 更新数据库：新增 Symposium on Networked Systems Design and Implementation (NSDI) 2016~2023 （共474篇)
+* 更新UI界面：新增标签 `jsac`, `tmc`, `ton`, `sigcomm`, `mobicom`, `infocom`, `nsdi`
