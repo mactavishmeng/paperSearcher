@@ -21,7 +21,14 @@ const source_pool = {
     "raid": "International Symposium on Recent Advances in Intrusion Detection (CCF B)",
     "jcs": "Journal of Computer Security (CCF B)",
     "tissec": "ACM Transactions on Privacy and Security (CCF B)",
-    "srds": "IEEE International Symposium on Reliable Distributed Systems (CCF B)"
+    "srds": "IEEE International Symposium on Reliable Distributed Systems (CCF B)",
+    "jsac": "IEEE Journal of Selected Areas in Communications (CCF A)",
+    "tmc": "IEEE Transactions on Mobile Computing (CCF A)",
+    "ton": "IEEE/ACM Transactions on Networking (CCF A)",
+    "sigcomm": "ACM Conference on Applications, Technologies, Architectures, and Protocols for Computer Communication (CCF A)",
+    "mobicom": "ACM/IEEE International Conference on Mobile Computing and Networking (CCF A)",
+    "infocom": "IEEE Conference on Computer Communications(CCF A)",
+    "nsdi": "Symposium on Networked Systems Design and Implementation (CCF A)"
 };
 
 // 给关键字上色
