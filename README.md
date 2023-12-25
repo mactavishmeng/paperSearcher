@@ -172,3 +172,31 @@ if __name__ == '__main__':
 - 更新数据库：新增 ACM/IEEE International Conference on Mobile Computing and Networking (MobiCom) 2016~2023 （共721篇)
 - 更新数据库：新增 Symposium on Networked Systems Design and Implementation (NSDI) 2016~2023 （共474篇)
 - 更新UI界面：新增标签 `jsac`, `tmc`, `ton`, `sigcomm`, `mobicom`, `infocom`, `nsdi`
+
+
+2023.12.25 （Merry Christmas🎄)
+
+- 更新数据库：新增 Dependable Systems and Networks (DSN), 2023 (共147篇)
+- 更新数据库：新增 IEEE Conference on Computer Communications (INFOCOM), 2023 (共251篇)
+- 更新数据库：新增 International Conference on Mobile Computing and Networking (MobiCom), 2023 (共130篇)
+- 更新数据库：新增 International Symposium on Recent Advances in Intrusion Detection (RAID), 2023 (共50篇)
+- 更新数据库：新增 ACM SIGCOMM Conference (SIGCOMM), 2023 (共71篇)
+- 更新数据库：新增 Symposium On Usable Privacy and Security (SOUPS), 2023 (共33篇)
+- 更新数据库：新增 IEEE Symposium on Security and Privacy (SP), 2023 (共228篇)
+- 更新数据库：新增 USENIX Security Symposium, 2023 (共422篇)
+- 更新数据库：新增 The Web Conference (WWW), 2016 (共378篇)
+- 更新数据库：新增 The Web Conference (WWW), 2017 (共443篇)
+- 更新数据库：新增 The Web Conference (WWW), 2018 (共569篇)
+- 更新数据库：新增 The Web Conference (WWW), 2019 (共633篇)
+- 更新数据库：新增 The Web Conference (WWW), 2020 (共504篇)
+- 更新数据库：新增 The Web Conference (WWW), 2021 (共485篇)
+- 更新数据库：新增 The Web Conference (WWW), 2022 (共589篇)
+- 更新数据库：新增 The Web Conference (WWW), 2023 (共698篇)
+- 更新数据库：新增 Computers & Security, 2023, Volume 132 (共67篇)
+- 更新数据库：新增 Computers & Security, 2023, Volume 133 (共25篇)
+- 更新数据库：新增 Computers & Security, 2023, Volume 134 (共35篇)
+- 更新数据库：新增 ACM Computing Surveys, 2024, Volume 56 (共53篇)
+- 更新数据库：新增 IEEE Journal of Selected Areas in Communications, 2023, Volume 41 (共46篇)
+- 更新数据库：新增 IEEE Transactions on Mobile Computing (TMC), 2023, Volume 22 (共122篇)
+- 更新数据库：新增 IEEE/ACM Transactions on Networking (TON), 2023, Volume 31 (共60篇)
+- 更新UI界面：新增标签 `www`

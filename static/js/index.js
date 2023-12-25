@@ -28,7 +28,8 @@ const source_pool = {
     "sigcomm": "ACM Conference on Applications, Technologies, Architectures, and Protocols for Computer Communication (CCF A)",
     "mobicom": "ACM/IEEE International Conference on Mobile Computing and Networking (CCF A)",
     "infocom": "IEEE Conference on Computer Communications(CCF A)",
-    "nsdi": "Symposium on Networked Systems Design and Implementation (CCF A)"
+    "nsdi": "Symposium on Networked Systems Design and Implementation (CCF A)",
+    "www": "The Web Conference (CCF A)"
 };
 
 // 给关键字上色
