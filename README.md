@@ -33,6 +33,7 @@
 - ACM/IEEE International Conference on Mobile Computing and Networking (MobiCom) (CCF A)
 - IEEE Conference on Computer Communications (INFOCOM) (CCF A)
 - Symposium on Networked Systems Design and Implementation (NSDI) (CCF A)
+- The Web Conference (WWW) (CCF A)
 
 使用Flask作为基础框架，写的比较简单，主要为实现功能，代码很丑（一下午撸完前后端，凑合看）
 
@@ -199,4 +200,6 @@ if __name__ == '__main__':
 - 更新数据库：新增 IEEE Journal of Selected Areas in Communications, 2023, Volume 41 (共46篇)
 - 更新数据库：新增 IEEE Transactions on Mobile Computing (TMC), 2023, Volume 22 (共122篇)
 - 更新数据库：新增 IEEE/ACM Transactions on Networking (TON), 2023, Volume 31 (共60篇)
+- 更新数据库：删除数据库中所有 Poster/Demo 类文章 (共313篇)
+- 更新数据库：删除数据库中所有 Infocom workshop (CCF None) 文章 (共696篇)
 - 更新UI界面：新增标签 `www`
