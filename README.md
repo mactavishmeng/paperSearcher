@@ -41,7 +41,7 @@
 
 ## 安装方法
 
-安装完Python3之后，将本仓库clone到本地，使用pip安装flask即可。
+安装完Python3之后，将本仓库clone到本地，随后解压`paper.db.zip`，然后使用pip安装flask即可使用。
 
 ```bash
 git clone https://github.com/mactavishmeng/paperSearcher.git
@@ -200,6 +200,38 @@ if __name__ == '__main__':
 - 更新数据库：新增 IEEE Journal of Selected Areas in Communications, 2023, Volume 41 (共46篇)
 - 更新数据库：新增 IEEE Transactions on Mobile Computing (TMC), 2023, Volume 22 (共122篇)
 - 更新数据库：新增 IEEE/ACM Transactions on Networking (TON), 2023, Volume 31 (共60篇)
-- 更新数据库：删除数据库中所有 Poster/Demo 类文章 (共313篇)
-- 更新数据库：删除数据库中所有 Infocom workshop (CCF None) 文章 (共696篇)
+- 更新数据库：删除数据库中 Poster/Demo 类文章 (共313篇)
+- 更新数据库：删除数据库中 Infocom workshop (CCF None) 文章 (共696篇)
 - 更新UI界面：新增标签 `www`
+
+2024.10.28
+
+- 更新数据库：新增 ACM SIGCOMM Conference (SIGCOMM), 2023 (共134篇)
+- 更新数据库：新增 ACM/IEEE International Conference on Mobile Computing and Networking (MobiCom) 2023 （共177篇)
+- 更新数据库：新增 IEEE Conference on Computer Communications (INFOCOM), 2023 (共507篇)
+- 更新数据库：新增 Computers & Security, 2024, Volume 144 (共67篇)
+- 更新数据库：新增 European Symposium on Research in Computer Security (ESORICS) 2024 (共253篇)
+- 更新数据库：新增 IEEE International Symposium on Reliable Distributed Systems (SRDS) 2024（共23篇）
+- 更新数据库：新增 Symposium on Networked Systems Design and Implementation (NSDI) 2024 （共112篇)
+- 更新数据库：新增 The Web Conference (WWW), 2024 (共778篇)
+- 更新数据库：新增 IEEE Symposium on Security and Privacy (SP), 2024 (共293篇)
+- 更新数据库：新增 USENIX Security Symposium'24（共418篇）
+- 更新数据库：新增Network and Distributed System Security Symposium (NDSS) 2024（共140篇）
+- 更新数据库：新增 Dependable Systems and Networks (DSN), 2024 (共97篇)
+- 更新数据库：新增 International Symposium on Recent Advances in Intrusion Detection (RAID), 2024 (共43篇)
+- 更新数据库：新增 Symposium On Usable Privacy and Security (SOUPS), 2024 (共33篇)
+- 更新数据库：新增 USENIX ATC '24（共77篇）
+- 更新数据库：新增 IEEE Transactions on Dependable and Secure Computing (TDSC) Volume 21 Number 1 Jan ~ Feb (2024)（共35篇）
+- 更新数据库：新增 Journal of Computer Security (JCS) Volume 32 Number 1 (2024) (共3篇)
+- 更新数据库：新增 IEEE Journal of Selected Areas in Communications (JSAC) 2024, Volume 42 （共35篇)
+- 更新数据库：新增 IEEE Transactions on Mobile Computing (TMC), 2024, Volume 23 (共164篇)
+- 更新数据库：新增 ACM Transactions on Privacy and Security (TISSEC/TOPS) Volume 27 Number 1 (2024)（共13篇）
+- 更新数据库：新增 IEEE/ACM Transactions on Networking (TON), 2024, Volume 32, Number 1~2 (共122篇)
+- 更新数据库：新增 Computers & Security, 2024, Volume 136 ~ 148 (共477篇)
+
+**重要提示**
+- *更新文件：由于git大小限制，因此将paper.db压缩后上传，使用时请先解压！*
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=mactavishmeng/paperSearcher&type=Date)](https://star-history.com/#mactavishmeng/paperSearcher&Date)
