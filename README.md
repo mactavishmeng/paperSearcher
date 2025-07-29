@@ -229,6 +229,29 @@ if __name__ == '__main__':
 - 更新数据库：新增 IEEE/ACM Transactions on Networking (TON), 2024, Volume 32, Number 1~2 (共122篇)
 - 更新数据库：新增 Computers & Security, 2024, Volume 136 ~ 148 (共477篇)
 
+2025.07.23
+
+- 更新数据库：新增 Proceedings of the AAAI Conference on Artificial Intelligence (AAAI) 2025 (共 3486 篇)
+- 更新数据库：新增 Annual Computer Security Applications Conference (ACSAC) 2024 (共 84 篇)
+- 更新数据库：新增 Computers & Security (COMPSEC) Volume 154 (共 41 篇)
+- 更新数据库：新增 Computers & Security (COMPSEC) Volume 155 (共 23 篇)
+- 更新数据库：新增 Computers & Security (COMPSEC) Volume 156 (共 30 篇)
+- 更新数据库：新增 Computers & Security (COMPSEC) Volume 157 (共 15 篇)
+- 更新数据库：新增 IEEE Communications Surveys and Tutorials (COMSUR) Volume 27 (共 38 篇)
+- 更新数据库：新增 ACM Computing Surveys (CSUR) Volume 57 (共 84 篇)
+- 更新数据库：新增 Dependable Systems and Networks (DSN) 2025 (共 57 篇)
+- 更新数据库：新增 IEEE Conference on Computer Communications (INFOCOM) 2025 (共 273 篇)
+- 更新数据库：新增 Journal of Computer Security (JCS) Volume 33 (共 11 篇)
+- 更新数据库：新增 IEEE Journal of Selected Areas in Communications (JSAC) Volume 43 (共 121 篇)
+- 更新数据库：新增 Network and Distributed System Security Symposium (NDSS) 2025 (共 212 篇)
+- 更新数据库：新增 Symposium on Networked Systems Design and Implementation (NSDI) 2025 (共 84 篇)
+- 更新数据库：新增 IEEE Symposium on Security and Privacy (S&P) 2025 (共 256 篇)
+- 更新数据库：新增 IEEE Transactions on Dependable and Secure Computing (TDSC) Volume 22 (共 233 篇)
+- 更新数据库：新增 IEEE Transactions on Information Forensics and Security (TIFS) Volume 20 (共 306 篇)
+- 更新数据库：新增 ACM Transactions on Privacy and Security (TISSEC) Volume 28 (共 14 篇)
+- 更新数据库：新增 IEEE Transactions on Mobile Computing (TMC) Volume 24 (共 341 篇)
+- 更新数据库：新增 The Web Conference (WWW) 2025 (共 448 篇)
+
 **重要提示**
 - *更新文件：由于git大小限制，因此将paper.db压缩后上传，使用时请先解压！*
 
