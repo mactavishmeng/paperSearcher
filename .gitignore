@@ -2,3 +2,5 @@
 main.py
 /.idea
 spider.py
+papers.db
+.Ds_Store
